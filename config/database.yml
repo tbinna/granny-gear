@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: granny-gear_production
-  username: granny-gear
+# username: granny-gear
   password: <%= ENV['GRANNY-GEAR_DATABASE_PASSWORD'] %>
