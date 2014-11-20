@@ -3,6 +3,8 @@ rvm:
 - 2.1.5
 addons:
   postgresql: '9.3'
+  code_climate:
+    repo_token: f2149ef2a697887f546da8f0422f58aec6014cea8d749162512013b49910ca2d
 before_script:
 - psql -c 'create database granny_gear_test;' -U postgres
 deploy:
