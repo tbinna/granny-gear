@@ -1,0 +1,29 @@
+<h1>Listing derailleur_gears</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Chainring</th>
+      <th>Cassette</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @derailleur_gears.each do |derailleur_gear| %>
+      <tr>
+        <td><%= derailleur_gear.name %></td>
+        <td><%= derailleur_gear.chainring %></td>
+        <td><%= derailleur_gear.cassette %></td>
+        <td><%= link_to 'Show', derailleur_gear %></td>
+        <td><%= link_to 'Edit', edit_derailleur_gear_path(derailleur_gear) %></td>
+        <td><%= link_to 'Destroy', derailleur_gear, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Derailleur gear', new_derailleur_gear_path %>

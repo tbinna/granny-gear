@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @derailleur_gear.name %>
+</p>
+
+<p>
+  <strong>Chainring:</strong>
+  <%= @derailleur_gear.chainring %>
+</p>
+
+<p>
+  <strong>Cassette:</strong>
+  <%= @derailleur_gear.cassette %>
+</p>
+
+<%= link_to 'Edit', edit_derailleur_gear_path(@derailleur_gear) %> |
+<%= link_to 'Back', derailleur_gears_path %>

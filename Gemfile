@@ -39,4 +39,6 @@ gem 'spring',        group: :development
 
 gem 'rails_12factor', group: :production
 
+gem 'simple_form', '~> 3.0.2'
+
 ruby "2.1.5"

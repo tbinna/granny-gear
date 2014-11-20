@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: "Derailleur Gear Config 3x9"
+  chainring: [19,34,42]
+  cassette: [12,14,16,18,20,22,25,28,32]
+
+two:
+  name: "Derailleur Gear Config 3x8"
+  chainring: [19,34,42]
+  cassette: [12,14,16,18,20,22,25,28]
