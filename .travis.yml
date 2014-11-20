@@ -2,6 +2,13 @@ language: ruby
 rvm:
 - 2.1.5
 addons:
-  postgresql: "9.3"
+  postgresql: '9.3'
 before_script:
-  - psql -c 'create database granny_gear_test;' -U postgres
+- psql -c 'create database granny_gear_test;' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: dotLwTZhq7N+EInHyg+DcoqgRafqti/wHxVBI1L6jq4Q2ef+LSoYFIVCzFw+6gfaEA0v5yzdPUraajh2v/Ns7iRUnUYhBVRXt3MNVTKJxVxEVQWk110Ka89/WI+QEFT6thD4eHGTlxRSw6eOgvZ6bXfQa3qLvQlJyGlLFqMz7KM=
+  app: granny-gear
+  on:
+    repo: tbinna/granny-gear
