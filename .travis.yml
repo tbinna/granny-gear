@@ -4,4 +4,4 @@ rvm:
 addons:
   postgresql: "9.3"
 before_script:
-  - psql -c 'create database granny-gear_test;' -U postgres
+  - psql -c 'create database granny_gear_test;' -U postgres
