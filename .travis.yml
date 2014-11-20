@@ -9,6 +9,9 @@ deploy:
   provider: heroku
   api_key:
     secure: dotLwTZhq7N+EInHyg+DcoqgRafqti/wHxVBI1L6jq4Q2ef+LSoYFIVCzFw+6gfaEA0v5yzdPUraajh2v/Ns7iRUnUYhBVRXt3MNVTKJxVxEVQWk110Ka89/WI+QEFT6thD4eHGTlxRSw6eOgvZ6bXfQa3qLvQlJyGlLFqMz7KM=
+  strategy: git
   app: granny-gear
   on:
     repo: tbinna/granny-gear
+  run:
+    - "rake db:migrate"
