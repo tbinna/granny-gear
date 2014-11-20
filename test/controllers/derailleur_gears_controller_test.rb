@@ -3,7 +3,7 @@ require 'test_helper'
 class DerailleurGearsControllerTest < ActionController::TestCase
   setup do
     @derailleur_gear = derailleur_gears(:one)
-    @update = {name: "Derailleur Gear Config 3x9 Update", chainring: [19,34,42], cassette: [12,14,16,18,20,22,25,28,32]}
+    @update = {name: "Derailleur Gear Config 3x9 Update", chainring: "19,34,42", cassette: "12,14,16,18,20,22,25,28,32"}
   end
 
   test "should get index" do
