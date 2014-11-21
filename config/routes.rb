@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+
+  get "gear_setup/index"
+
   resources :internal_gear_hubs
 
   resources :derailleur_gears
 
-  root 'welcome#index'
+  root 'gear_setup#index', as: 'setup'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
