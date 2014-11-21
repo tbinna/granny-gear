@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  gear_ratio: MyText
+  chainring: 1
+  sprocket: 1
+
+two:
+  name: MyString
+  gear_ratio: MyText
+  chainring: 1
+  sprocket: 1

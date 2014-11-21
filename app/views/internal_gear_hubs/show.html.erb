@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @internal_gear_hub.name %>
+</p>
+
+<p>
+  <strong>Gear ratio:</strong>
+  <%= @internal_gear_hub.gear_ratio %>
+</p>
+
+<p>
+  <strong>Chainring:</strong>
+  <%= @internal_gear_hub.chainring %>
+</p>
+
+<p>
+  <strong>Sprocket:</strong>
+  <%= @internal_gear_hub.sprocket %>
+</p>
+
+<%= link_to 'Edit', edit_internal_gear_hub_path(@internal_gear_hub) %> |
+<%= link_to 'Back', internal_gear_hubs_path %>

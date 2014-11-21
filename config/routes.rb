@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :internal_gear_hubs
+
   resources :derailleur_gears
 
   root 'welcome#index'
