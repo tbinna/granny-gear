@@ -1,0 +1,9 @@
+<h5>Derailleur Gears</h5>
+<%= form_for(@derailleur_gear) do |f| %>
+  <div class="input-group">
+    <span class="input-group-addon">Crankset</span>
+    <%= f.text_field :chainring, class: "form-control", placeholder: "24, 32, 44", value: "24, 32, 44" %>
+    <span class="input-group-addon">Cassette</span>
+    <%= f.text_field :cassette, class: "form-control", placeholder: "12, 14, 16, 18, 20, 23, 26, 30, 34", value: "12, 14, 16, 18, 20, 23, 26, 30, 34" %>
+  </div>
+<% end %>

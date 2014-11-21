@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
 
   get 'analysis/result'
-
-  get "gear_setup/index"
+  get "analysis/setup"
 
   resources :internal_gear_hubs
-
   resources :derailleur_gears
 
-  root 'gear_setup#index', as: 'setup'
+  root 'analysis#setup', as: 'setup'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

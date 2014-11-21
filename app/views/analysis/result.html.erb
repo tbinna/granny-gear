@@ -4,6 +4,8 @@
 
 <p class="lead">Your configuration leades the following results.</p>
 
+<p>Params <%= @params %></p>
+
 <div class="row">
 	<div class="col-md-6">
 		<div class="panel panel-default">
@@ -21,4 +23,4 @@
 	</div>
 </div>
 
-<%= link_to "Edit your setup or create a new analyis", controller: "gear_setup", action: "index" %>
+<%= link_to "Edit your setup or create a new analyis", controller: "analysis", action: "setup" %>
