@@ -1,2 +1,24 @@
-<h1>Analysis#result</h1>
-<p>Find me in app/views/analysis/result.html.erb</p>
+<div class="page-header">
+	<h1>Results</h1>
+</div>
+
+<p class="lead">Your configuration leades the following results.</p>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				-- Gear ratio graph goes here --
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				-- Gear setup goes here --
+			</div>
+		</div>
+	</div>
+
+	<%= link_to "Edit your setup or create a new analyis", controller: "gear_setup", action: "index" %>
+</div>
