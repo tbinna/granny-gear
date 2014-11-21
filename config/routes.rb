@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'analysis/result'
+
   get "gear_setup/index"
 
   resources :internal_gear_hubs
