@@ -1,11 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: "Derailleur Gear Config 3x9"
+singlespeed:
+  name: "Singlespeed Config 1x1"
+  chainring: [42]
+  cassette: [18]
+
+mountain_bike:
+  name: "Mountain Bike Gear Config 3x9"
   chainring: [19,34,42]
   cassette: [12,14,16,18,20,22,25,28,32]
 
-two:
-  name: "Derailleur Gear Config 3x8"
-  chainring: [19,34,42]
-  cassette: [12,14,16,18,20,22,25,28]
+kids_bike:
+  name: "Kids Bike Gear Config 2x6"
+  chainring: [19,34]
+  cassette: [14,18,20,23,25,32]

@@ -9,4 +9,8 @@ test "derailleur gears attributes must not be empty" do
     assert derailleur_gear.errors[:chainring].any?
     assert derailleur_gear.errors[:cassette].any?
   end
+
+test "gear ratio calculation results in the correct format and data" do
+	derailleur_gear = DerailleurGear.new
+end
 end
