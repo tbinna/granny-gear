@@ -6,9 +6,6 @@ class AnalysisController < ApplicationController
 	end
 
 	def result
-		@cr = params[:chainring]
-		@cs = params[:cassette]
-
 		@derailleur_gear = DerailleurGear.new
 		@derailleur_gear.name = "DG"
 		@derailleur_gear.chainring = params[:chainring]
