@@ -1,8 +1,8 @@
-<%= form_tag("result", method: "get") do %>
-<div class="col-md-6">
+<div class="col-md-12">
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<h5>Derailleur Gears</h5>
+			<%= form_tag("result", method: "get") do %>
 			<div class="input-group">
 				<span class="input-group-addon">Crankset</span>
 				<%= text_field_tag :fc, nil, class: "form-control", placeholder: "24, 32, 44", value: "24, 32, 44" %>
@@ -12,12 +12,16 @@
 				<span class="input-group-addon">Cassette</span>
 				<%= text_field_tag :cs, nil, class: "form-control", placeholder: "12, 14, 16, 18, 20, 23, 26, 30, 34", value: "12, 14, 16, 18, 20, 23, 26, 30, 34" %>
 			</div>
+			<br>
+			<%= submit_tag "Analyze", class: "btn btn-default pull-right" %>
+			<% end %>
 		</div>
 	</div>
 </div>
-<div class="col-md-6">
+<div class="col-md-12">
 	<div class="panel panel-default">
 		<div class="panel-body">
+			<%= form_tag("result", method: "get") do %>
 			<h5>Internal Gear Hub</h5>
 			<div class="input-group">
 				<span class="input-group-addon">Gear Ratio</span>
@@ -30,10 +34,9 @@
 				<span class="input-group-addon">Sprocket</span>
 				<%= text_field_tag :sp, nil, class: "form-control", placeholder: "16", value: "16" %>
 			</div>
+			<br>
+			<%= submit_tag "Analyze", class: "btn btn-default pull-right" %>
+			<% end %>
 		</div>
 	</div>
 </div>
-<div class="col-md-12">
-	<%= submit_tag "Analyze", class: "btn btn-default pull-right" %>
-</div>
-<% end %>
