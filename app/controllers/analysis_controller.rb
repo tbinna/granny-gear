@@ -6,11 +6,6 @@ class AnalysisController < ApplicationController
 	end
 
 	def result
-		@params = []
-		params.each do |key,value|
-			@params << "Param #{key}: #{value}"
-		end
-
 		@cr = params[:chainring]
 		@cs = params[:cassette]
 
