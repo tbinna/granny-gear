@@ -1,7 +1,7 @@
 class DerailleurGear < ActiveRecord::Base
 	validates :name, :chainring, :cassette, presence: true
 
-	def gear_ratio
+	def gear_ratios
 		chainring_array = chainring.split(",").map{ |s| s.to_i }
 		cassette_array = cassette.split(",").map{ |s| s.to_i }
 
@@ -15,5 +15,9 @@ class DerailleurGear < ActiveRecord::Base
 			data << {name: "#{sprocket}T", data: data_series}
 		}
 		data.to_json
+	end
+
+	def gear_ratio_categories
+		chainring.split(",").map { |s| s << 'T' }.to_json
 	end
 end

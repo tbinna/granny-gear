@@ -3,6 +3,7 @@
 		<div class="panel-body">
 			<h5>Derailleur Gears</h5>
 			<%= form_tag("/analysis/result", method: "get") do %>
+			<%= hidden_field_tag 'gear_type', 'DG' %>
 			<div class="input-group">
 				<span class="input-group-addon">Crankset</span>
 				<%= text_field_tag :chainring, nil, class: "form-control", placeholder: "24, 32, 44", value: "24, 32, 44" %>
@@ -21,7 +22,8 @@
 <div class="col-md-12">
 	<div class="panel panel-default">
 		<div class="panel-body">
-			<%= form_tag("result", method: "get") do %>
+			<%= form_tag("/analysis/result", method: "get") do %>
+			<%= hidden_field_tag 'gear_type', 'IGH' %>
 			<h5>Internal Gear Hub</h5>
 			<div class="input-group">
 				<span class="input-group-addon">Gear Ratio</span>
@@ -30,7 +32,7 @@
 			<br>
 			<div class="input-group">
 				<span class="input-group-addon">Chainring</span>
-				<%= text_field_tag :crankset, nil, class: "form-control", placeholder: "40", value: "40" %>
+				<%= text_field_tag :chainring, nil, class: "form-control", placeholder: "40", value: "40" %>
 				<span class="input-group-addon">Sprocket</span>
 				<%= text_field_tag :sprocket, nil, class: "form-control", placeholder: "16", value: "16" %>
 			</div>

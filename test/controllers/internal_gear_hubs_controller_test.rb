@@ -2,7 +2,7 @@ require 'test_helper'
 
 class InternalGearHubsControllerTest < ActionController::TestCase
   setup do
-    @internal_gear_hub = internal_gear_hubs(:one)
+    @internal_gear_hub = internal_gear_hubs(:rohloff_one_by_one)
   end
 
   test "should get index" do

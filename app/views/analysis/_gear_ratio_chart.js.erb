@@ -3,20 +3,21 @@ $(function() {
 	new Highcharts.Chart({
 		chart: {
 			type: "column",
-			renderTo: "gear_ratio_chart"
+			renderTo: "gear_ratios_chart"
 		},
 		title: {
 			text: null
 		},
 		xAxis: {
-			categories: <%= @derailleur_gear.chainring.split(",").map { |s| s << 'T' }.to_json.html_safe %>
+			categories: <%= @drivetrain.gear_ratio_categories.html_safe %>
 		},
 		yAxis: {
+			tickInterval: 0.5,
 			title: {
-				text: "Gear Ratio"
+				text: "Gear ratio"
 			}
 		},
-		series: <%= @derailleur_gear.gear_ratio.html_safe %>
+		series: <%= @drivetrain.gear_ratios.html_safe %>
 	});
 });
 </script>

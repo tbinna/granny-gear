@@ -6,9 +6,19 @@ class AnalysisController < ApplicationController
 	end
 
 	def result
-		@derailleur_gear = DerailleurGear.new
-		@derailleur_gear.name = "DG"
-		@derailleur_gear.chainring = params[:chainring]
-		@derailleur_gear.cassette = params[:cassette]
+		@drivetrain
+		case params[:gear_type]
+		when 'DG'
+			@drivetrain = DerailleurGear.new
+			@drivetrain.name = params[:gear_type]
+			@drivetrain.chainring = params[:chainring]
+			@drivetrain.cassette = params[:cassette]
+		when 'IGH'
+			@drivetrain = InternalGearHub.new
+			@drivetrain.name = params[:gear_type]
+			@drivetrain.gear_ratio = params[:gear_ratio]
+			@drivetrain.chainring = params[:chainring]
+			@drivetrain.sprocket = params[:sprocket]
+		end
 	end
 end
