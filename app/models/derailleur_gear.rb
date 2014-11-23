@@ -7,13 +7,13 @@ class DerailleurGear < ActiveRecord::Base
 
 		data = []
 
-		chainring_array.each { |chainring|
-			data_series = {}
-			cassette_array.sort.reverse.each { |sprocket|
-				data_series["#{chainring}/#{sprocket}"] = chainring.to_f / sprocket
+		cassette_array.sort.reverse.each { |sprocket|
+			data_series = []
+			chainring_array.each { |chainring|
+				data_series << chainring.to_f / sprocket
 			}
-			data << {name: "#{chainring}", data: data_series}
+			data << {name: "#{sprocket}T", data: data_series}
 		}
-		data
+		data.to_json
 	end
 end

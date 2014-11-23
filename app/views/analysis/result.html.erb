@@ -1,3 +1,5 @@
+<%= render(:partial => 'gear_ratio_chart', :handlers => [:erb], :formats => [:js]) %>
+
 <div class="page-header">
 	<h1>Results</h1>
 </div>
@@ -8,7 +10,7 @@
 	<div class="col-md-12">
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<%= column_chart @derailleur_gear.gear_ratio %>
+				<div id="gear_ratio_chart"></div>
 			</div>
 		</div>
 	</div>

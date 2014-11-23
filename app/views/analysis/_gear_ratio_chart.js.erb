@@ -1,0 +1,22 @@
+<script>
+$(function() {
+	new Highcharts.Chart({
+		chart: {
+			type: "column",
+			renderTo: "gear_ratio_chart"
+		},
+		title: {
+			text: null
+		},
+		xAxis: {
+			categories: <%= @derailleur_gear.chainring.split(",").map { |s| s << 'T' }.to_json.html_safe %>
+		},
+		yAxis: {
+			title: {
+				text: "Gear Ratio"
+			}
+		},
+		series: <%= @derailleur_gear.gear_ratio.html_safe %>
+	});
+});
+</script>

@@ -45,6 +45,4 @@ gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'autoprefixer-rails'
 
-gem 'chartkick', '~> 1.3.2'
-
 ruby "2.1.5"
