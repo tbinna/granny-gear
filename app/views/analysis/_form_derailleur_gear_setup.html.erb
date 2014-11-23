@@ -1,0 +1,14 @@
+<%= form_tag("/analysis/result", method: "get") do %>
+<%= hidden_field_tag 'gear_type', 'DG' %>
+<div class="input-group">
+	<span class="input-group-addon">Crankset</span>
+	<%= text_field_tag :chainring, nil, class: "form-control", placeholder: "24, 32, 44", value: "24, 32, 44" %>
+</div>
+<br>
+<div class="input-group">
+	<span class="input-group-addon">Cassette</span>
+	<%= text_field_tag :cassette, nil, class: "form-control", placeholder: "12, 14, 16, 18, 20, 23, 26, 30, 34", value: "12, 14, 16, 18, 20, 23, 26, 30, 34" %>
+</div>
+<br>
+<%= submit_tag "Analyze", class: "btn btn-default pull-right" %>
+<% end %>
