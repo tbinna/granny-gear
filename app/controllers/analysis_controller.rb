@@ -11,7 +11,7 @@ class AnalysisController < ApplicationController
 		when 'DG'
 			@drivetrain = DerailleurGear.new
 			@drivetrain.name = params[:gear_type]
-			@drivetrain.chainring = params[:chainring]
+			@drivetrain.crankset = params[:crankset]
 			@drivetrain.cassette = params[:cassette]
 		when 'IGH'
 			@drivetrain = InternalGearHub.new

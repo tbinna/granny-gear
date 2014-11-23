@@ -69,6 +69,6 @@ class DerailleurGearsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def derailleur_gear_params
-      params.require(:derailleur_gear).permit(:name, :chainring, :cassette)
+      params.require(:derailleur_gear).permit(:name, :crankset, :cassette)
     end
 end

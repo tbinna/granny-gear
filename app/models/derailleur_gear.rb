@@ -1,15 +1,15 @@
 class DerailleurGear < ActiveRecord::Base
-	validates :name, :chainring, :cassette, presence: true
+	validates :name, :crankset, :cassette, presence: true
 
 	def gear_ratios
-		chainring_array = chainring.split(",").map{ |s| s.to_i }
+		crankset_array = crankset.split(",").map{ |s| s.to_i }
 		cassette_array = cassette.split(",").map{ |s| s.to_i }
 
 		data = []
 
 		cassette_array.sort.reverse.each { |sprocket|
 			data_series = []
-			chainring_array.each { |chainring|
+			crankset_array.each { |chainring|
 				data_series << chainring.to_f / sprocket
 			}
 			data << {name: "#{sprocket}T", data: data_series}
@@ -18,6 +18,6 @@ class DerailleurGear < ActiveRecord::Base
 	end
 
 	def gear_ratio_categories
-		chainring.split(",").map { |s| s << 'T' }.to_json
+		crankset.split(",").map { |s| s << 'T' }.to_json
 	end
 end

@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20141121042839) do
 
   create_table "derailleur_gears", force: true do |t|
     t.string   "name"
-    t.string   "chainring"
+    t.string   "crankset"
     t.string   "cassette"
     t.datetime "created_at"
     t.datetime "updated_at"

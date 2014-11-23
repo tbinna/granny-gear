@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Chainring</th>
+      <th>Crankset</th>
       <th>Cassette</th>
       <th colspan="3"></th>
     </tr>
@@ -14,7 +14,7 @@
     <% @derailleur_gears.each do |derailleur_gear| %>
       <tr>
         <td><%= derailleur_gear.name %></td>
-        <td><%= derailleur_gear.chainring %></td>
+        <td><%= derailleur_gear.crankset %></td>
         <td><%= derailleur_gear.cassette %></td>
         <td><%= link_to 'Show', derailleur_gear %></td>
         <td><%= link_to 'Edit', edit_derailleur_gear_path(derailleur_gear) %></td>
