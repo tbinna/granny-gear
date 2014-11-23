@@ -1,1 +1,1 @@
-json.extract! @derailleur_gear, :id, :name, :crankset, :cassette, :created_at, :updated_at
+json.extract! @derailleur_gear, :id, :description, :crankset, :cassette

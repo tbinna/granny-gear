@@ -11,21 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121042839) do
+ActiveRecord::Schema.define(version: 20141123170417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "derailleur_gears", force: true do |t|
-    t.string   "name"
-    t.string   "crankset"
-    t.string   "cassette"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "description"
+    t.string "crankset"
+    t.string "cassette"
   end
 
   create_table "internal_gear_hubs", force: true do |t|
-    t.string  "name"
+    t.string  "description"
     t.text    "gear_ratio"
     t.integer "chainring"
     t.integer "sprocket"

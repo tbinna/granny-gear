@@ -3,7 +3,7 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Description</th>
       <th>Crankset</th>
       <th>Cassette</th>
       <th colspan="3"></th>
@@ -13,7 +13,7 @@
   <tbody>
     <% @derailleur_gears.each do |derailleur_gear| %>
       <tr>
-        <td><%= derailleur_gear.name %></td>
+        <td><%= derailleur_gear.description %></td>
         <td><%= derailleur_gear.crankset %></td>
         <td><%= derailleur_gear.cassette %></td>
         <td><%= link_to 'Show', derailleur_gear %></td>

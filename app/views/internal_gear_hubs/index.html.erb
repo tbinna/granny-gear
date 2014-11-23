@@ -3,7 +3,7 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Description</th>
       <th>Gear ratio</th>
       <th>Chainring</th>
       <th>Sprocket</th>
@@ -14,7 +14,7 @@
   <tbody>
     <% @internal_gear_hubs.each do |internal_gear_hub| %>
       <tr>
-        <td><%= internal_gear_hub.name %></td>
+        <td><%= internal_gear_hub.description %></td>
         <td><%= internal_gear_hub.gear_ratio %></td>
         <td><%= internal_gear_hub.chainring %></td>
         <td><%= internal_gear_hub.sprocket %></td>

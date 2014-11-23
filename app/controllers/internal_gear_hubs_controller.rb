@@ -69,6 +69,6 @@ class InternalGearHubsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def internal_gear_hub_params
-      params.require(:internal_gear_hub).permit(:name, :gear_ratio, :chainring, :sprocket)
+      params.require(:internal_gear_hub).permit(:description, :gear_ratio, :chainring, :sprocket)
     end
 end

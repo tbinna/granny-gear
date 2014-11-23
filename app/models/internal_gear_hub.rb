@@ -1,5 +1,5 @@
 class InternalGearHub < ActiveRecord::Base
-	validates :name, :gear_ratio, :chainring, :sprocket, presence: true
+	validates :description, :gear_ratio, :chainring, :sprocket, presence: true
 
 	def gear_ratios_calculation
 		gear_ratio_array = gear_ratio.split(",").map{ |s| s.to_f }

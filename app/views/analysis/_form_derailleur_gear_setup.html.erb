@@ -1,5 +1,5 @@
 <%= form_tag("/analysis/result", method: "get") do %>
-<%= hidden_field_tag 'gear_type', 'DG' %>
+<%= hidden_field_tag 'description', 'DG' %>
 <div class="input-group">
 	<span class="input-group-addon">Crankset</span>
 	<%= text_field_tag :crankset, nil, class: "form-control", placeholder: "24, 32, 44", value: "24, 32, 44" %>

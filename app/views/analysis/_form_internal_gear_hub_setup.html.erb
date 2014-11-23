@@ -1,5 +1,5 @@
 <%= form_tag("/analysis/result", method: "get") do %>
-<%= hidden_field_tag 'gear_type', 'IGH' %>
+<%= hidden_field_tag 'description', 'IGH' %>
 <div class="input-group">
 	<span class="input-group-addon">Gear Ratio</span>
 	<%= text_field_tag :gear_ratio, nil, class: "form-control", placeholder: "0.279,0.316,0.36,0.409,0.464,0.528,0.6,0.682,0.774,0.881,1,1.135,1.292,1.467", value: "0.279,0.316,0.36,0.409,0.464,0.528,0.6,0.682,0.774,0.881,1,1.135,1.292,1.467" %>

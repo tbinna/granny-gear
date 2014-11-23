@@ -1,5 +1,5 @@
 class DerailleurGear < ActiveRecord::Base
-	validates :name, :crankset, :cassette, presence: true
+	validates :description, :crankset, :cassette, presence: true
 
 	def gear_ratios
 		crankset_array = crankset.split(",").map{ |s| s.to_i }
