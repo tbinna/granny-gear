@@ -6,11 +6,11 @@ class InternalGearHubTest < ActiveSupport::TestCase
   end
 
   test "calculate the gear ratios with 1 chainring and 1 sprocket should get the same gear ratio array" do
-  	actual_ratios = @rohloff_gear_hub.gear_ratios_calculation
-  	expected_ratios = @rohloff_gear_hub.gear_ratio.split(",").map { |s| s.to_f }
+  	actual_ratios = @rohloff_gear_hub.gear_ratios.first[:data]
+  	expected_ratios = @rohloff_gear_hub.gear_ratio
 	
 	expected_ratios.zip(actual_ratios).each do |expected, actual|
-  		assert_same(expected, actual)
+  		assert_same(expected.to_f, actual.to_f)
   	end
   end
 end

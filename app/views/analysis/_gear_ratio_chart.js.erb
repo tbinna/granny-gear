@@ -9,7 +9,7 @@ $(function() {
 			text: null
 		},
 		xAxis: {
-			categories: <%= @drivetrain.gear_ratio_categories.html_safe %>
+			categories: <%= @drivetrain.gear_ratio_categories.to_json.html_safe %>
 		},
 		yAxis: {
 			tickInterval: 0.5,
@@ -17,7 +17,7 @@ $(function() {
 				text: "Gear ratio"
 			}
 		},
-		series: <%= @drivetrain.gear_ratios.html_safe %>
+		series: <%= @drivetrain.gear_ratios.to_json.html_safe %>
 	});
 });
 </script>

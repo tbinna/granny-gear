@@ -1,21 +1,17 @@
 class InternalGearHub < ActiveRecord::Base
+	serialize :gear_ratio, Array
+	
 	validates :description, :gear_ratio, :chainring, :sprocket, presence: true
 
-	def gear_ratios_calculation
-		gear_ratio_array = gear_ratio.split(",").map{ |s| s.to_f }
-
+	def gear_ratios
 		ratios = []
-		gear_ratio_array.sort.each { |ratio|
+		gear_ratio.sort.each { |ratio|
 			ratios << ratio * (chainring.to_f / sprocket)
 		}
-		ratios
-	end
-
-	def gear_ratios
-		[{name: "Internal Gear Hub", data: gear_ratios_calculation}].to_json
+		[{name: "Internal Gear Hub", data: ratios}]
 	end
 
 	def gear_ratio_categories
-		(1..gear_ratio.split(",").count).to_a.to_json
+		(1..gear_ratio.count).to_a
 	end
 end

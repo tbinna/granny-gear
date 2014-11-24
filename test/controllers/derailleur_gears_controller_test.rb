@@ -2,8 +2,8 @@ require 'test_helper'
 
 class DerailleurGearsControllerTest < ActionController::TestCase
   setup do
-    @derailleur_gear = derailleur_gears(:mountain_bike)
-    @update = derailleur_gears(:singlespeed).attributes
+    @mountain_bike = derailleur_gears(:mountain_bike)
+    @singlespeed = derailleur_gears(:singlespeed)
   end
 
   test "should get index" do
@@ -19,33 +19,29 @@ class DerailleurGearsControllerTest < ActionController::TestCase
 
   test "should create derailleur_gear" do
     assert_difference('DerailleurGear.count') do
-      post :create, derailleur_gear: @update
+      post :create, derailleur_gear: @singlespeed.attributes
     end
     assert_redirected_to derailleur_gear_path(assigns(:derailleur_gear))
   end
 
-  # ...
-
   test "should show derailleur_gear" do
-    get :show, id: @derailleur_gear
+    get :show, id: @mountain_bike
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @derailleur_gear
+    get :edit, id: @mountain_bike
     assert_response :success
   end
 
   test "should update derailleur_gear" do
-    patch :update, id: @derailleur_gear, derailleur_gear: @update
+    patch :update, id: @mountain_bike, derailleur_gear: @singlespeed.attributes
     assert_redirected_to derailleur_gear_path(assigns(:derailleur_gear))
   end
 
-  # ...
-
   test "should destroy derailleur_gear" do
     assert_difference('DerailleurGear.count', -1) do
-      delete :destroy, id: @derailleur_gear
+      delete :destroy, id: @mountain_bike
     end
 
     assert_redirected_to derailleur_gears_path
