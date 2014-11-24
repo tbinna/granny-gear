@@ -17,6 +17,8 @@ class AnalysisController < ApplicationController
 			@drivetrain.gear_ratio = params[:gear_ratio]
 			@drivetrain.chainring = params[:chainring]
 			@drivetrain.sprocket = params[:sprocket]
+		else
+			not_found
 		end
 	end
 end
