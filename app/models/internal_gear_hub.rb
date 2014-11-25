@@ -9,7 +9,7 @@ class InternalGearHub < ActiveRecord::Base
 	SPROCKET_MIN = 0
 	SPROCKET_MAX = 40
 	
-	before_validation :convert_array_elements_to_f
+	before_validation :convert_gear_ratio_elements_to_f
 
 	serialize :gear_ratio, Array
 	
@@ -30,15 +30,15 @@ class InternalGearHub < ActiveRecord::Base
 		(1..gear_ratio.count).to_a
 	end
 
+	private
+
 	def all_gear_ratios_in_range
 		if gear_ratio.any? { |ratio| !ratio.between?(GEAR_RATIO_MIN, GEAR_RATIO_MAX) }
 			errors.add(:gear_ratio, "has to be between #{GEAR_RATIO_MIN} and #{GEAR_RATIO_MAX}")
 		end
 	end
 
-	private
-
-	def convert_array_elements_to_f
+	def convert_gear_ratio_elements_to_f
 		gear_ratio.map! { |ratio| ratio.to_f }
 	end
 end

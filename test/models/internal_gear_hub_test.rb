@@ -22,7 +22,7 @@ class InternalGearHubTest < ActiveSupport::TestCase
 
   test "validate gear ratio should add an error if a ratio is smaller then the min allowed" do
     gear_hub = internal_gear_hubs(:rohloff_1x1_negative_gear_ratio)
-    gear_hub.all_gear_ratios_in_range
+    gear_hub.valid?
     assert_equal 1, gear_hub.errors[:gear_ratio].count
   end
 

@@ -1,15 +1,18 @@
 class DerailleurGear < ActiveRecord::Base
+
+	CRANKSET_MIN = 1
+	CRANKSET_MAX = 70
+
+	CASSETTE_MIN = 1
+	CASSETTE_MAX = 50
+
 	serialize :crankset, Array
 	serialize :cassette, Array
 
+	before_validation :convert_all_array_elements_to_i
+
 	validates :description, :crankset, :cassette, presence: true
-
-	CRANKSET_MIN = 0
-	CRANKSET_MAX = 70
-
-	CASSETTE_MIN = 0
-	CASSETTE_MAX = 50
-
+	validate :all_chainrings_in_range, :all_sprockets_in_range
 
 	def gear_ratios
 		data = []
@@ -26,5 +29,28 @@ class DerailleurGear < ActiveRecord::Base
 
 	def gear_ratio_categories
 		crankset.map { |i| i.to_s << 'T' }
+	end
+
+	private
+
+	def values_in_range?(array, min, max)
+		array.any? { |e| !e.between?(min, max) }
+	end
+
+	def all_chainrings_in_range
+		if values_in_range?(crankset, CRANKSET_MIN, CRANKSET_MAX)
+			errors.add(:crankset, "has to be between #{CRANKSET_MIN} and #{CRANKSET_MAX}")
+		end
+	end
+
+	def all_sprockets_in_range
+		if values_in_range?(cassette, CASSETTE_MIN, CASSETTE_MAX)
+			errors.add(:cassette, "has to be between #{CASSETTE_MIN} and #{CASSETTE_MAX}")
+		end
+	end
+
+	def convert_all_array_elements_to_i
+		crankset.map! { |chainring| chainring.to_i }
+		cassette.map! { |sprocket| sprocket.to_i }
 	end
 end

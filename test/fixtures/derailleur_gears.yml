@@ -1,16 +1,26 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 singlespeed:
-  description: "Singlespeed Config 1x1"
+  description: "Singlespeed"
   crankset: [42]
   cassette: [18]
 
 mountain_bike:
-  description: "Mountain Bike Gear Config 3x9"
+  description: "Mountain Bike Gear"
   crankset: [19,34,42]
   cassette: [12,14,16,18,20,22,25,28,32]
 
 kids_bike:
-  description: "Kids Bike Gear Config 2x6"
+  description: "Kids Bike Gear"
   crankset: [19,34]
   cassette: [14,18,20,23,25,32]
+
+singlespeed_too_small:
+  description: "Singlespeed too small"
+  crankset: [-1]
+  cassette: [0]
+
+singlespeed_too_big:
+  description: "Singlespeed too big"
+  crankset: [75]
+  cassette: [55]
