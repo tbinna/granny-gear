@@ -41,4 +41,13 @@ class DerailleurGearTest < ActiveSupport::TestCase
 	test "gear range for moutain bike 3x9 speed is correct" do
 		assert_in_delta 5.1944, @mountain_bike_3x9.gear_range, 0.001
 	end
+
+	test "gear spacing for mountain bike 3x9 speed is correct" do
+		expected_gear_spacing = [0.133, 0.153, 0.130, 0.150, 0.111, 0.125, 0.142, 0.166]
+		actual_gear_spacing = @mountain_bike_3x9.gear_spacing
+		assert_equal expected_gear_spacing.size, actual_gear_spacing.size
+		expected_gear_spacing.zip(actual_gear_spacing).each do |expected, actual|
+			assert_in_delta expected, actual, 0.001
+		end
+	end
 end

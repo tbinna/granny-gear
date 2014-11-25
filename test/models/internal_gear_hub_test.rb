@@ -16,9 +16,9 @@ class InternalGearHubTest < ActiveSupport::TestCase
   test "calculate the gear ratios with 1 chainring and 1 sprocket should get the same gear ratio array" do
   	actual_ratios = @rohloff_1x1.gear_ratios.first[:data]
   	expected_ratios = @rohloff_1x1.gear_ratio
-	
+
   	expected_ratios.zip(actual_ratios).each do |expected, actual|
-    		assert_same(expected.to_f, actual.to_f)
+      assert_same(expected.to_f, actual.to_f)
     end
   end
 
@@ -54,5 +54,14 @@ class InternalGearHubTest < ActiveSupport::TestCase
 
   test "gear range for rohloff 14 speed hub is correct" do
     assert_in_delta 5.2581, @rohloff_1x1.gear_range, 0.001
+  end
+
+  test "gear spacing for rohloff 14 speed is correct" do
+    expected_gear_spacing = [0.132616, 0.139240, 0.136111, 0.134474, 0.137931, 0.136363, 0.136666, 0.134897, 0.138242, 0.135073, 0.135, 0.138325, 0.135448]
+    actual_gear_spacing = @rohloff_1x1.gear_spacing
+    assert_equal expected_gear_spacing.size, actual_gear_spacing.size
+    expected_gear_spacing.zip(actual_gear_spacing).each do |expected, actual|
+      assert_in_delta expected, actual, 0.000001
+    end
   end
 end

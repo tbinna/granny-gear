@@ -18,6 +18,11 @@ class DerailleurGear < ActiveRecord::Base
 		(crankset.max.to_f / cassette.min) / (crankset.min.to_f / cassette.max)
 	end
 
+	def gear_spacing
+		rcassette = cassette.sort.reverse
+		rcassette.slice(1, rcassette.length).zip(rcassette).map { |i, j| (1.0/j - 1.0/i).abs * j }
+	end
+
 	def gear_ratios
 		data = []
 
