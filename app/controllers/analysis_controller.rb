@@ -8,8 +8,6 @@ class AnalysisController < ApplicationController
 	end
 
 	def result
-		@drivetrain = DerailleurGear.new
-
 		case params[:description]
 		when 'DG'
 			@drivetrain = DerailleurGear.new
