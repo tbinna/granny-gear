@@ -1,23 +1,27 @@
 <%= form_tag("/analysis/result", method: "get") do %>
 <%= hidden_field_tag 'description', 'DG' %>
-<div class="form-group form-inline">
-	<%= label_tag :crankset %>
-	<% @crankset_placeholder.each do |placeholder| %>
-		<div class="input-group">
-		<%= number_field_tag :crankset.to_s + "[]", nil, min: 0, max: 70, placeholder: placeholder, value: placeholder %>
+<div class="form-group">
+	<div class="row">
+		<%= label_tag :crankset, nil, class: "col-md-2" %>
+		<div class="col-md-9">
+			<% @crankset_placeholder.each do |placeholder| %>
+				<%= number_field_tag :crankset.to_s + "[]", nil, min: 0, max: 70, placeholder: placeholder, value: placeholder %>
+			<% end %>
 		</div>
-	<% end %>
-</div>
-<div class="form-group form-inline">
-	<%= label_tag :cassette %>
-	<% @cassette_placeholder.each do |placeholder| %>
-		<div class="input-group">
-		<%= number_field_tag :cassette.to_s + "[]", nil, min: 0, max: 50, placeholder: placeholder, value: placeholder %>
-		</div>
-	<% end %>
+	</div>
 </div>
 <div class="form-group">
-	<%= submit_tag "Analyze", class: "btn btn-default pull-right" %>
+	<div class="row">
+		<%= label_tag :cassette, nil, class: "col-md-2" %>
+		<div class="col-md-9">
+			<% @cassette_placeholder.each do |placeholder| %>
+				<%= number_field_tag :cassette.to_s + "[]", nil, min: 0, max: 50, placeholder: placeholder, value: placeholder %>
+			<% end %>
+		</div>
+	</div>
+</div>
+<div class="form-group">
+		<%= submit_tag "Analyze", class: "btn btn-default pull-right col-md-1 col-md-offset-11" %>
 </div>
 <% end %>
 
