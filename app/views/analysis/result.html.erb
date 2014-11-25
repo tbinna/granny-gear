@@ -1,4 +1,5 @@
 <%= render(:partial => 'gear_ratio_chart', :handlers => [:erb], :formats => [:js]) %>
+<%= render(:partial => 'gear_spacing_chart', :handlers => [:erb], :formats => [:js]) %>
 
 <div class="page-header">
 	<h1>Results</h1>
@@ -7,16 +8,6 @@
 <p class="lead">Your configuration leads to the following results. <%= link_to raw("<span class='glyphicon glyphicon-arrow-left' aria-hidden='true'></span> Back"), {controller: "analysis", action: "setup"}, class: "btn btn-default pull-right", role: "button" %></p>
 
 <div class="row">
-	<div class="col-md-12">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title">Gear Ratio</h3>
-			</div>
-			<div class="panel-body">
-				<div id="gear_ratios_chart"></div>
-			</div>
-		</div>
-	</div>
 	<div class="col-md-12">
 		<div class="panel panel-default">
 			<div class="panel-heading">
@@ -35,6 +26,26 @@
 						<span class="gear-range-title lead">Gear Range</span>
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Gear Ratio</h3>
+			</div>
+			<div class="panel-body">
+				<div id="gear_ratios_chart"></div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Gear Spacing</h3>
+			</div>
+			<div class="panel-body">
+				<div id="gear_spacing_chart"></div>
 			</div>
 		</div>
 	</div>

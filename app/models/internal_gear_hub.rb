@@ -26,6 +26,10 @@ class InternalGearHub < ActiveRecord::Base
 		gear_ratio.slice(1, gear_ratio.length).zip(gear_ratio).map { |i, j| (i-j).abs / j }
 	end
 
+	def gear_spacing_categories
+		(1..gear_ratio.length-1).zip(2..gear_ratio.length).map { |i,j| i.to_s << "/" << j.to_s }
+	end
+
 	def gear_ratios
 		ratios = []
 		gear_ratio.sort.each { |ratio|

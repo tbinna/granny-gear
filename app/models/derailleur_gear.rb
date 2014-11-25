@@ -23,6 +23,10 @@ class DerailleurGear < ActiveRecord::Base
 		rcassette.slice(1, rcassette.length).zip(rcassette).map { |i, j| (1.0/j - 1.0/i).abs * j }
 	end
 
+	def gear_spacing_categories
+		(1..cassette.length-1).zip(2..cassette.length).map { |i,j| i.to_s << "/" << j.to_s }
+	end
+
 	def gear_ratios
 		data = []
 
