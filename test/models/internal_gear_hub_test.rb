@@ -21,7 +21,7 @@ class InternalGearHubTest < ActiveSupport::TestCase
   end
 
   test "validate gear ratio should add an error if a ratio is smaller then the min allowed" do
-    gear_hub = internal_gear_hubs(:rohloff_1x1_negative_gear_ratio)
+    gear_hub = internal_gear_hubs(:rohloff_1x1_too_small)
     gear_hub.valid?
     assert_equal 1, gear_hub.errors[:gear_ratio].count
   end
@@ -42,5 +42,9 @@ class InternalGearHubTest < ActiveSupport::TestCase
     gear_hub = internal_gear_hubs(:rohloff_too_big)
     gear_hub.valid?
     assert_equal 1, gear_hub.errors[:sprocket].count
+  end
+
+  test "gear range for rohloff 14 speed hub is correct" do
+    assert_equal 5.2581, @rohloff_gear_hub.gear_range
   end
 end

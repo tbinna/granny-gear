@@ -18,6 +18,10 @@ class InternalGearHub < ActiveRecord::Base
 	validates :sprocket, numericality: { only_integer: true, greater_then: CHAINRING_MAX, less_than_or_equal_to: SPROCKET_MAX }
 	validate :all_gear_ratios_in_range
 
+	def gear_range
+		1
+	end
+
 	def gear_ratios
 		ratios = []
 		gear_ratio.sort.each { |ratio|

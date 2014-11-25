@@ -12,11 +12,11 @@ alfine_1x1:
   chainring: 1
   sprocket: 1
 
-rohloff_1x1_negative_gear_ratio:
+rohloff_1x1_too_small:
   description: "Rohloff SPEEDHUB 500/14"
   gear_ratio: [-0.279,0.316]
-  chainring: 1
-  sprocket: 1
+  chainring: 0
+  sprocket: -2
 
 rohloff_too_big:
   description: "Rohloff SPEEDHUB 500/14"
