@@ -14,6 +14,10 @@ class DerailleurGear < ActiveRecord::Base
 	validates :description, :crankset, :cassette, presence: true
 	validate :all_chainrings_in_range, :all_sprockets_in_range
 
+	def gear_range
+		(crankset.max.to_f / cassette.min) / (crankset.min.to_f / cassette.max)
+	end
+
 	def gear_ratios
 		data = []
 

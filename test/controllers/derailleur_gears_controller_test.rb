@@ -2,7 +2,7 @@ require 'test_helper'
 
 class DerailleurGearsControllerTest < ActionController::TestCase
   setup do
-    @mountain_bike = derailleur_gears(:mountain_bike)
+    @mountain_bike = derailleur_gears(:mountain_bike_3x9)
     @singlespeed = derailleur_gears(:singlespeed)
   end
 

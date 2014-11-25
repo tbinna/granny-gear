@@ -45,6 +45,6 @@ class InternalGearHubTest < ActiveSupport::TestCase
   end
 
   test "gear range for rohloff 14 speed hub is correct" do
-    assert_equal 5.2581, @rohloff_gear_hub.gear_range
+    assert_in_delta 5.2581, @rohloff_gear_hub.gear_range, 0.001
   end
 end

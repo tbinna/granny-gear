@@ -19,7 +19,7 @@ class InternalGearHub < ActiveRecord::Base
 	validate :all_gear_ratios_in_range
 
 	def gear_range
-		1
+		gear_ratio.max.to_f / gear_ratio.min
 	end
 
 	def gear_ratios
