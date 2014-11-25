@@ -16,8 +16,13 @@
 			<div class="panel-body">
 				<div class="stats-vales-col col-md-12 text-center">
 					<div class="col-md-4">
-						<span class="gear-range-value">
-						<strong><%= number_to_percentage(@drivetrain.gear_range*100, precision: 2) %></strong>
+						<span class="gear-range-value stats-value">
+							<strong><%= number_to_percentage(@drivetrain.gear_range*100, precision: 2) %></strong>
+						</span>
+					</div>
+					<div class="col-md-4">
+						<span class="gear-spacing-variance-value stats-value">
+							<strong><%= number_with_precision(standard_deviation(@drivetrain.gear_spacing), precision: 3) %></strong>
 						</span>
 					</div>
 				</div>
@@ -25,6 +30,10 @@
 					<div class="col-md-4">
 						<span class="gear-range-title lead">Gear Range</span>
 					</div>
+					<div class="col-md-4">
+						<span class="gear-range-title lead">Gear Spacing σ</span>
+					</div>
+
 				</div>
 			</div>
 		</div>
