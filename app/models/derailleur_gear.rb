@@ -4,6 +4,13 @@ class DerailleurGear < ActiveRecord::Base
 
 	validates :description, :crankset, :cassette, presence: true
 
+	CRANKSET_MIN = 0
+	CRANKSET_MAX = 70
+
+	CASSETTE_MIN = 0
+	CASSETTE_MAX = 50
+
+
 	def gear_ratios
 		data = []
 

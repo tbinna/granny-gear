@@ -2,7 +2,8 @@ require 'test_helper'
 
 class InternalGearHubsControllerTest < ActionController::TestCase
   setup do
-    @rohloff_gear_hub = internal_gear_hubs(:rohloff_one_by_one)
+    @rohloff_gear_hub = internal_gear_hubs(:rohloff_1x1)
+    @alfine_1x1 = internal_gear_hubs(:alfine_1x1)
   end
 
   test "should get index" do
@@ -35,7 +36,7 @@ class InternalGearHubsControllerTest < ActionController::TestCase
   end
 
   test "should update internal_gear_hub" do
-    patch :update, id: @rohloff_gear_hub, internal_gear_hub: @rohloff_gear_hub.attributes
+    patch :update, id: @rohloff_gear_hub, internal_gear_hub: @alfine_1x1.attributes
     assert_redirected_to internal_gear_hub_path(assigns(:internal_gear_hub))
   end
 
