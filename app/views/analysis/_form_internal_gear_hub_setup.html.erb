@@ -1,22 +1,23 @@
 <%= form_tag("/analysis/result", method: "get") do %>
 <%= hidden_field_tag 'description', 'IGH' %>
 <div class="form-group">
-	<div class="row">
-		<%= label_tag :gear_ratio, nil, class: "col-md-2" %>
-		<div class="col-md-9">
-			<% @gear_ratio_placeholder.each do |placeholder| %>
-				<%= number_field_tag :gear_ratio.to_s + "[]", nil, min: 0.0, max: 10.0, step: 0.001, placeholder: placeholder, value: placeholder %>
-			<% end %>
-		</div>
+	<!-- <div class="row"> -->
+	<%= label_tag :gear_ratio, nil, class: "col-md-2" %>
+	<div class="col-md-9">
+		<% @gear_ratio_placeholder.each do |placeholder| %>
+		<%= number_field_tag :gear_ratio.to_s + "[]", nil, min: 0.0, max: 10.0, step: 0.001, placeholder: placeholder, value: placeholder %>
+		<% end %>
 	</div>
+	<!-- </div> -->
 </div>
 <div class="form-group">
 	<div class="row">
-	<%= label_tag :chainring, nil, class: "col-md-2" %>
-	<%= number_field_tag :chainring, nil, min: 1, max: 100, class: "col-md-2", placeholder: "40", value: "40" %>
+		<%= label_tag :chainring, nil, class: "col-md-2" %>
+		<%= number_field_tag :chainring, nil, min: 1, max: 100, class: "col-md-2", placeholder: "40", value: "40" %>
 
-	<%= label_tag :sprocket, nil, class: "col-md-2" %>
-	<%= number_field_tag :sprocket, nil, min: 1, max: 40, class: "col-md-2", placeholder: "16", value: "16" %>
+		<%= label_tag :sprocket, nil, class: "col-md-2" %>
+		<%= number_field_tag :sprocket, nil, min: 1, max: 40, class: "col-md-2", placeholder: "16", value: "16" %>
+	</div>
 </div>
 <div class="form-group">
 	<%= submit_tag "Analyze", class: "btn btn-default pull-right" %>
