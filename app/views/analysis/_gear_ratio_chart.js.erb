@@ -1,23 +1,26 @@
 <script>
-$(function() {
-	new Highcharts.Chart({
-		chart: {
-			type: "column",
-			renderTo: "gear_ratios_chart"
-		},
-		title: {
-			text: null
-		},
-		xAxis: {
-			categories: <%= @drivetrain.gear_ratio_categories.to_json.html_safe %>
-		},
-		yAxis: {
-			tickInterval: 0.5,
+	$(function() {
+		new Highcharts.Chart({
+			chart: {
+				type: "column",
+				renderTo: "gear_ratios_chart"
+			},
 			title: {
-				text: "Gear ratio"
-			}
-		},
-		series: <%= @drivetrain.gear_ratios.to_json.html_safe %>
+				text: null
+			},
+			xAxis: {
+				categories: <%= @drivetrain.gear_ratio_categories.to_json.html_safe %>
+			},
+			yAxis: {
+				tickInterval: 0.5,
+				title: {
+					text: "Gear ratio"
+				}
+			},
+			credits: {
+				enabled: false
+			},
+			series: <%= @drivetrain.gear_ratios.to_json.html_safe %>
+		});
 	});
-});
 </script>
