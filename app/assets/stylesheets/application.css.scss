@@ -16,6 +16,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Lobster);
 
  /* Sticky footer styles
  -------------------------------------------------- */
@@ -47,5 +48,22 @@ body {
 }
 .container .text-muted {
   margin: 20px 0;
+}
+
+body > .container {
+    padding-top: 60px;
+}
+
+.logo-text {
+  font-family: 'Lobster', cursive;
+  font-weight: 400
+}
+
+.navbar-brand.logo-text {
+  font-size: 25px;
+}
+
+.footer .logo-text {
+  font-size: 16px;
 }
 
