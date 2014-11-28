@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'analysis/result'
+  get "about", to: "static_pages#about", as: "about"
+
+  get "analysis/result"
   get "analysis/setup"
 
   resources :internal_gear_hubs
   resources :derailleur_gears
 
-  root 'analysis#setup', as: 'setup'
+  root "analysis#setup", as: "home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
