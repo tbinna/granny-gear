@@ -18,11 +18,13 @@ $basic-blue: #2c3e50;
 $active-green: #18bc9c;
 $muted-gray: #f5f5f5;
 
- $navbar-default-link-hover-bg: transparent;
- $navbar-default-link-active-bg: transparent;
- $navbar-default-link-color: $muted-gray;
- $navbar-default-link-active-color: $active-green;
- $navbar-default-link-hover-color: #fff;
+$navbar-default-link-hover-bg: transparent;
+$navbar-default-link-active-bg: transparent;
+$navbar-default-link-disabled-bg: transparent;
+$navbar-default-link-color: $muted-gray;
+$navbar-default-link-active-color: $active-green;
+$navbar-default-link-disabled-color: $muted-gray;
+$navbar-default-link-hover-color: #fff;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
