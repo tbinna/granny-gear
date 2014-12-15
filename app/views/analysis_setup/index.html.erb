@@ -1,0 +1,68 @@
+<div class="page-header">
+	<h1>Gear Configuration Setup</h1>
+</div>
+
+<p class="lead">Fill in the gear configuration for your analysis.</p>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel-group" id="accordion">
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading-dg">
+					<h3 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse-dg" aria-expanded="true" aria-controls="collapse-dg">
+							Derailleur Gears
+						</a>
+					</h3>
+				</div>
+				<div id="collapse-dg" class="panel-collapse collapse in" aria-labelledby="heading-dg">
+					<div class="panel-body">
+						<%= render 'form_derailleur_gear_setup' %>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading-dg-custom">
+					<h3 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#collapse-dg-custom" aria-expanded="false" aria-controls="collapse-dg-custom">
+							Derailleur Gears Custom Configuration
+						</a>
+					</h3>
+				</div>
+				<div id="collapse-dg-custom" class="panel-collapse collapse" aria-labelledby="heading-dg-custom">
+					<div class="panel-body">
+						<%= render 'form_derailleur_gear_custom_setup' %>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading-igh">
+					<h3 class="panel-title">
+						<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse-igh" aria-expanded="false" aria-controls="collapse-igh">
+							Internal Gear Hub
+						</a>
+					</h3>
+				</div>
+				<div id="collapse-igh" class="panel-collapse collapse" aria-labelledby="heading-igh">
+					<div class="panel-body">
+						<%= render 'form_internal_gear_hub_setup' %>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" id="heading-igh-custom">
+					<h3 class="panel-title">
+						<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse-igh-custom" aria-expanded="false" aria-controls="collapse-igh-custom">
+							Internal Gear Hub Custom Configuration
+						</a>
+					</h3>
+				</div>
+				<div id="collapse-igh-custom" class="panel-collapse collapse" aria-labelledby="heading-igh-custom">
+					<div class="panel-body">
+						<%= render 'form_internal_gear_hub_custom_setup' %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

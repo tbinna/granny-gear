@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'analysis_setup/index'
+
   get "about", to: "static_pages#about", as: "about"
 
   get "analysis/result"

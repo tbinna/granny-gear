@@ -1,0 +1,2 @@
+module AnalysisSetupHelper
+end
