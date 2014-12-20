@@ -31,7 +31,7 @@
 				</div>
 				<div id="collapse-dg-custom" class="panel-collapse collapse" aria-labelledby="heading-dg-custom">
 					<div class="panel-body">
-						<%= render 'form_derailleur_gear_custom_setup' %>
+						<%= render partial: 'form_derailleur_gear_custom_setup', locals: {derailleur_gear: @derailleur_gear} %>
 					</div>
 				</div>
 			</div>
@@ -59,7 +59,7 @@
 				</div>
 				<div id="collapse-igh-custom" class="panel-collapse collapse" aria-labelledby="heading-igh-custom">
 					<div class="panel-body">
-						<%= render 'form_internal_gear_hub_custom_setup' %>
+						<%= render partial: 'form_internal_gear_hub_custom_setup', locals: {internal_gear_hub: @internal_gear_hub} %>
 					</div>
 				</div>
 			</div>

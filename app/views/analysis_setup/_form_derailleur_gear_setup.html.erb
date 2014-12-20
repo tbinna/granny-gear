@@ -1,5 +1,4 @@
-<%= form_tag("/analysis/result", method: "get") do %>
-<%= hidden_field_tag 'description', 'DG' %>
+<%= form_tag("/derailleur-gear-analysis/result", method: "post") do %>
 <div class="form-group col-md-12">
 	<%= label_tag "Derailleur Gear", nil, class: "col-md-3" %>
 	<div class="col-md-9">

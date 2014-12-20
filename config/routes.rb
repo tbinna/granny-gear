@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  post 'derailleur-gear-analysis/result'
+  post 'internal-gear-hub-analysis/result'
+  
   get 'analysis_setup/index'
 
   get "about", to: "static_pages#about", as: "about"

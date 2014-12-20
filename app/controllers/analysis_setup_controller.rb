@@ -1,5 +1,8 @@
 class AnalysisSetupController < ApplicationController
 	def index
+		@internal_gear_hub = InternalGearHub.new
+		@derailleur_gear = DerailleurGear.new
+		
 		@crankset_placeholder = [24, 32, 44]
 		@cassette_placeholder = [11, 13, 15, 17, 19, 21, 24, 27, 31, 35, 40]
 
