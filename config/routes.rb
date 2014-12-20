@@ -3,17 +3,14 @@ Rails.application.routes.draw do
   post 'derailleur-gear-analysis/result'
   post 'internal-gear-hub-analysis/result'
   
-  get 'analysis_setup/index'
+  get 'analysis-setup/index', as: "setup"
 
   get "about", to: "static_pages#about", as: "about"
-
-  get "analysis/result"
-  get "analysis/setup"
 
   resources :internal_gear_hubs
   resources :derailleur_gears
 
-  root "analysis#setup", as: "home"
+  root "analysis_setup#index", as: "home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
