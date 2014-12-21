@@ -1,28 +1,24 @@
 <%= form_tag("/derailleur-gear-analysis/result", method: "post") do %>
 <%= hidden_field_tag 'custom', true %>
 <%= hidden_field_tag 'derailleur_gear[description]', 'Custom' %>
-<div class="form-group">
-	<div class="row">
-		<%= label_tag :crankset, nil, class: "col-md-2" %>
-		<div class="col-md-9">
-			<% @crankset_placeholder.each do |placeholder| %>
-				<%= number_field_tag "derailleur_gear[" + :crankset.to_s + "][]", nil, min: 0, max: 70, placeholder: placeholder, value: placeholder %>
-			<% end %>
-		</div>
+<div class="form-group col-md-12">
+	<%= label_tag :crankset, nil, class: "col-md-3" %>
+	<div class="col-md-9">
+		<% @crankset_placeholder.each do |placeholder| %>
+		<%= number_field_tag "derailleur_gear[" + :crankset.to_s + "][]", nil, min: 0, max: 70, placeholder: placeholder, value: placeholder %>
+		<% end %>
+	</div>
+</div>
+<div class="form-group col-md-12">
+	<%= label_tag :cassette, nil, class: "col-md-3" %>
+	<div class="col-md-9">
+		<% @cassette_placeholder.each do |placeholder| %>
+		<%= number_field_tag "derailleur_gear[" + :cassette.to_s + "][]", nil, min: 0, max: 50, placeholder: placeholder, value: placeholder %>
+		<% end %>
 	</div>
 </div>
 <div class="form-group">
-	<div class="row">
-		<%= label_tag :cassette, nil, class: "col-md-2" %>
-		<div class="col-md-9">
-			<% @cassette_placeholder.each do |placeholder| %>
-				<%= number_field_tag "derailleur_gear[" + :cassette.to_s + "][]", nil, min: 0, max: 50, placeholder: placeholder, value: placeholder %>
-			<% end %>
-		</div>
-	</div>
-</div>
-<div class="form-group">
-		<%= submit_tag "Analyze", class: "btn btn-default pull-right col-md-1 col-md-offset-11" %>
+	<%= submit_tag "Analyze", class: "btn btn-default pull-right col-md-1 col-md-offset-11" %>
 </div>
 <% end %>
 
