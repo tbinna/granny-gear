@@ -1,7 +1,7 @@
 <%= form_tag("/internal-gear-hub-analysis/result", method: "post") do %>
 <div class="form-group col-md-12">
-	<%= label_tag "Gear Hub", nil, class: "col-md-3" %>
-	<div class="col-md-9">
+	<%= label_tag "Choose an internal gear hub to analyze", nil, class: "col-md-5" %>
+	<div class="col-md-5">
 		<%= select_tag(:id, options_from_collection_for_select(InternalGearHub.all, :id, :description)) %>
 	</div>
 </div>
