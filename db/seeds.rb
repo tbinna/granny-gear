@@ -8,9 +8,9 @@
 
 
 derailleur_gears = DerailleurGear.create([
-	{description: "Standard 3x9", crankset: [19,25,43], cassette: [12,14,16,18,20,22,25,28,32]},
-	{description: "Standard 3x8", crankset: [19,25,43], cassette: [12,14,17,19,22,25,28,32]}])
+	{ description: "Standard 3x9", crankset: [19,25,43], cassette: [12,14,16,18,20,22,25,28,32] },
+	{ description: "Standard 3x8", crankset: [19,25,43], cassette: [12,14,17,19,22,25,28,32] }])
 
 internal_gear_hubs = InternalGearHub.create([
-	{description: "Rohloff SPEEDHUB 500/14", gear_ratio: [0.279,0.316,0.36,0.409,0.464,0.528,0.6,0.682,0.774,0.881,1,1.135,1.292,1.467], chainring: 40, sprocket: 16},
-	{description: "Shimano Alfine 700/11", gear_ratio: [0.527, 0.681, 0.770, 0.878, 0.995, 1.134, 1.292, 1.462, 1.667, 1.888, 2.153], chainring: 40, sprocket: 16}])
+	{ description: "Rohloff SPEEDHUB 500/14", gear_ratio: [0.279,0.316,0.36,0.409,0.464,0.528,0.6,0.682,0.774,0.881,1,1.135,1.292,1.467], chainring: 40, sprocket: 16 },
+	{ description: "Shimano Alfine 700/11", gear_ratio: [0.527, 0.681, 0.770, 0.878, 0.995, 1.134, 1.292, 1.462, 1.667, 1.888, 2.153], chainring: 40, sprocket: 16 }])
