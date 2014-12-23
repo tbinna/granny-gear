@@ -1,23 +1,25 @@
-<%= form_tag("/internal-gear-hub-analysis/result", method: "post") do %>
-<%= hidden_field_tag 'custom', true %>
-<%= hidden_field_tag 'internal_gear_hub[description]', 'Custom' %>
-<div class="form-group col-md-12">
-	<%= label_tag :gear_ratio, nil, class: "col-md-3" %>
-	<div class="col-md-9">
-		<% @gear_ratio_placeholder.each do |placeholder| %>
-		<%= number_field_tag "internal_gear_hub[" + :gear_ratio.to_s + "][]", nil, min: 0.0, max: 10.0, step: 0.001, placeholder: placeholder, value: placeholder %>
-		<% end %>
+<%= form_for @internal_gear_hub, url: "/internal-gear-hub-analysis/result" do |f| %>
+	<%= hidden_field_tag "custom", true %>
+	<%= f.hidden_field :description %>
+
+	<div class="form-group col-md-12">
+		<%= f.label :gear_ratio, class: "col-md-3" %>
+		<div class="col-md-9">
+			<% InternalGearHub::GEAR_RATIO_PLACEHOLDER.each do |placeholder| %>
+			<%= f.number_field :gear_ratio, multiple: true, min: InternalGearHub::GEAR_RATIO_MIN, max: InternalGearHub::GEAR_RATIO_MAX, step: 0.001, placeholder: placeholder, value: placeholder %>
+			<% end %>
+		</div>
 	</div>
-</div>
-<div class="form-group col-md-12">
-	<div class="col-md-3"><%= label_tag :chainring, nil %></div>
-	<div class="col-md-2"><%= number_field_tag "internal_gear_hub[" + :chainring.to_s + "]", nil, min: 1, max: 99, placeholder: "40", value: "40" %></div>
-</div>
-<div class="form-group col-md-12">
-	<div class="col-md-3"><%= label_tag :sprocket, nil %></div>
-	<div class="col-md-2"><%= number_field_tag "internal_gear_hub[" + :sprocket.to_s + "]", nil, min: 1, max: 40, placeholder: "16", value: "16" %></div>
-</div>
-<div class="form-group">
-	<%= submit_tag "Analyze", class: "btn btn-default pull-right" %>
-</div>
+
+	<div class="form-group col-md-12">
+		<div class="col-md-3"><%= f.label :chainring %></div>
+		<div class="col-md-2"><%= f.number_field :chainring, min: InternalGearHub::CHAINRING_MIN, max: InternalGearHub::CHAINRING_MAX, placeholder: InternalGearHub::CHAINRING_PLACEHOLDER, value: InternalGearHub::CHAINRING_PLACEHOLDER %></div>
+	</div>
+	<div class="form-group col-md-12">
+		<div class="col-md-3"><%= f.label :sprocket %></div>
+		<div class="col-md-2"><%= f.number_field :sprocket, min: InternalGearHub::SPROCKET_MIN, max: InternalGearHub::SPROCKET_MAX, placeholder: InternalGearHub::SPROCKET_PLACEHOLDER, value: InternalGearHub::SPROCKET_PLACEHOLDER %></div>
+	</div>
+	<div class="form-group">
+		<%= f.submit "Analyze", class: "btn btn-default pull-right" %>
+	</div>
 <% end %>

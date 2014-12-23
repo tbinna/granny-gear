@@ -6,6 +6,9 @@ class DerailleurGear < ActiveRecord::Base
 	CASSETTE_MIN = 1
 	CASSETTE_MAX = 50
 
+	CRANKSET_PLACEHOLDER = [24, 32, 44]
+	CASSETTE_PLACEHOLDER = [11, 13, 15, 17, 19, 21, 24, 27, 31, 35, 40]
+
 	serialize :crankset, Array
 	serialize :cassette, Array
 

@@ -8,6 +8,10 @@ class InternalGearHub < ActiveRecord::Base
 
 	SPROCKET_MIN = 1
 	SPROCKET_MAX = 40
+
+	CHAINRING_PLACEHOLDER = 40
+	SPROCKET_PLACEHOLDER = 16
+	GEAR_RATIO_PLACEHOLDER = [0.279,0.316,0.36,0.409,0.464,0.528,0.6,0.682,0.774,0.881,1,1.135,1.292,1.467]
 	
 	before_validation :convert_gear_ratio_elements_to_f
 
