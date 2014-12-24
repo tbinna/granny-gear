@@ -17,9 +17,13 @@
 			},
 			yAxis: {
 				title: {
-					text: "Gear spacing [%]"
+					text: "Gear spacing"
 				},
-				max: 0.2
+				labels: {
+					formatter: function() { return Highcharts.numberFormat(this.value * 100, 0) + '%'; }
+				},
+				max: 0.25,
+				min: 0.0
 			},
 			legend: {
 				enabled: false
