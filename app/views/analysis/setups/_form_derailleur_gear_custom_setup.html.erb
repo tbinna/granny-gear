@@ -1,4 +1,4 @@
-<%= form_for @derailleur_gear, url: "/derailleur-gear-analysis/result" do |f| %>
+<%= form_for @derailleur_gear, url: analysis_derailleur_gear_path do |f| %>
 	<%= hidden_field_tag "custom", true %>
 	<%= f.hidden_field :description %>
 

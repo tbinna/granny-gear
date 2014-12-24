@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
 
-  post 'derailleur-gear-analysis/result'
-  post 'internal-gear-hub-analysis/result'
-  
-  get 'analysis-setup/index', as: "setup"
-
-  get "about", to: "static_pages#about", as: "about"
+  namespace :analysis do
+    resource :setup, only: :show
+    resource :derailleur_gear, only: :create
+    resource :internal_gear_hub, only: :create
+  end
 
   resources :internal_gear_hubs
   resources :derailleur_gears
 
-  root "analysis_setup#index", as: "home"
+  get "about", to: "static_pages#about", as: "about"
+
+  root "analysis/setups#show", as: "home"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

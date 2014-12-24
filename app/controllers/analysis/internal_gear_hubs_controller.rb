@@ -1,7 +1,7 @@
-class InternalGearHubAnalysisController < ApplicationController
-	before_action :set_internal_gear_hub, only: [:result]
+class Analysis::InternalGearHubsController < ApplicationController
+	before_action :set_internal_gear_hub, only: [:create]
 
-	def result
+	def create
 		render 'shared/result', locals: { drivetrain: @internal_gear_hub }
 	end
 

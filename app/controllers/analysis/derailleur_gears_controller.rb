@@ -1,7 +1,7 @@
-class DerailleurGearAnalysisController < ApplicationController
-	before_action :set_derailleur_gear, only: [:result]
+class Analysis::DerailleurGearsController < ApplicationController
+	before_action :set_derailleur_gear, only: [:create]
 
-	def result
+	def create
 		render 'shared/result', locals: { drivetrain: @derailleur_gear }
 	end
 
