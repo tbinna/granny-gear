@@ -38,6 +38,8 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'rails_12factor', group: :production
+gem 'unicorn'
+
 gem 'newrelic_rpm', group: :production
 
 gem "codeclimate-test-reporter", group: :test, require: nil
