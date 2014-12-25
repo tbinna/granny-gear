@@ -6,8 +6,8 @@ Rails.application.routes.draw do
     resource :internal_gear_hub, only: :create
   end
 
-  #resources :internal_gear_hubs
-  #resources :derailleur_gears
+  resources :internal_gear_hubs
+  resources :derailleur_gears
 
   get "about", to: "static_pages#about", as: "about"
 
